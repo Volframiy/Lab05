@@ -1,0 +1,36 @@
+<template>
+    <div class="slds-p-around_x-small slds-scrollable_y" style="height: 350px;">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Opportunity Name">Номер</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Account Name">Подія</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Close Date">Рішення</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+                <template for:each={data} for:item="d">
+                    <tr key={d.num} class="slds-hint-parent">
+                        <td>
+                          <div class="slds-truncate">{d.num}</div>
+                        </td>
+                        <td >
+                          <div class="slds-truncate">{d.action}</div>
+                        </td>
+                        <td style="width: 700px;">
+                          <div class="slds-truncate">
+                            <lightning-tree style="width: 700px;" items={d.solution}></lightning-tree>
+                          </div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template>

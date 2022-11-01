@@ -1,0 +1,56 @@
+<template>
+    <div class="slds-p-around_x-small">
+        <lightning-tabset variant="scoped">
+            <lightning-tab label="Джерела ризиків">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_5-of-6">
+                        <div style="height: 350px;">
+                            <lightning-datatable
+                                    key-field="id"
+                                    data={data}
+                                    columns={columns}
+                                    hide-checkbox-column
+                                    column-widths-mode='auto'>
+                            </lightning-datatable>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <label style="height: 20px;" class="slds-form-element__label">Ймовірність ризиків</label>
+                        <div style="height: 330px;" class="slds-box">
+                            <div class="slds-text-align_left slds-p-bottom_small">T: {getProbability.t}</div>
+                            <div class="slds-text-align_left slds-p-bottom_small">C: {getProbability.c}</div>
+                            <div class="slds-text-align_left slds-p-bottom_small">P: {getProbability.p}</div>
+                            <div class="slds-text-align_left slds-p-bottom_small">M: {getProbability.m}</div>
+                            <div style="font-weight: bold;" class="slds-text-align_left slds-p-bottom_small">Total: {getProbability.total}</div>
+                        </div>
+                    </div>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Ризикові події">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_5-of-6">
+                        <div style="height: 350px;">
+                            <lightning-datatable
+                                    key-field="id"
+                                    data={dataAction}
+                                    columns={columnsAction}
+                                    hide-checkbox-column
+                                    column-widths-mode='auto'>
+                            </lightning-datatable>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <label style="height: 20px;" class="slds-form-element__label">Ймовірність появи ризикових подій</label>
+                        <div style="height: 330px;" class="slds-box">
+                            <div class="slds-text-align_left slds-p-bottom_small">T: {getProbabilityAction.t}</div>
+                            <div class="slds-text-align_left slds-p-bottom_small">C: {getProbabilityAction.c}</div>
+                            <div class="slds-text-align_left slds-p-bottom_small">P: {getProbabilityAction.p}</div>
+                            <div class="slds-text-align_left slds-p-bottom_small">M: {getProbabilityAction.m}</div>
+                            <div style="font-weight: bold;" class="slds-text-align_left slds-p-bottom_small">Total: {getProbabilityAction.total}</div>
+                        </div>
+                    </div>
+                </div>
+            </lightning-tab>
+        </lightning-tabset>
+    </div>
+</template>

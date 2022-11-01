@@ -1,0 +1,42 @@
+<template>
+    <div class="slds-p-around_x-small">
+        <lightning-tabset variant="scoped">
+            <lightning-tab label="Підсумкова ймовірність настання подій">
+                <div style="height: 350px;">
+                    <lightning-datatable
+                            key-field="num"
+                            data={getData}
+                            onsave={handleSaveMark}
+                            hide-checkbox-column
+                            columns={columns}>
+                    </lightning-datatable>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Підсумкова величина ймовірності настання подій">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_5-of-6">
+                        <div style="height: 350px;">
+                            <lightning-datatable
+                                    key-field="num"
+                                    data={getDataQuantity}
+                                    onsave={handleSaveELRER}
+                                    hide-checkbox-column
+                                    columns={columnsQuantity}>
+                            </lightning-datatable>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <div style="height: 350px;" class="slds-box">
+                            <div class="slds-text-align_left slds-p-bottom_small">Min: {getIntervls.min}</div>
+                            <div class="slds-text-align_left slds-p-bottom_small">Max: {getIntervls.max}</div>
+                            <div class="slds-text-align_left slds-p-bottom_small">Intervals</div>
+                            <div class="slds-text-align_left slds-p-bottom_small">{getIntervls.interval1}</div>
+                            <div class="slds-text-align_left slds-p-bottom_small">{getIntervls.interval2}</div>
+                            <div class="slds-text-align_left slds-p-bottom_small">{getIntervls.interval3}</div>
+                        </div>
+                    </div>
+                </div>
+            </lightning-tab>
+        </lightning-tabset>
+    </div>
+</template>

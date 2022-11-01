@@ -1,0 +1,79 @@
+<template>
+    <lightning-card>
+        <lightning-tabset variant="scoped">
+            <lightning-tab label="Вагові коефіцієнти за експертом">
+              <div style="height: 330px;">
+                <lightning-datatable
+                    data-id="tableWeight"
+                    key-field="id"
+                    data={dataWeightingFactors}
+                    onsave={handleWeightingFactors}
+                    hide-checkbox-column
+                    columns={columnsWeightingFactors}>
+                </lightning-datatable>
+            </div>
+            </lightning-tab>
+            <lightning-tab label="Оцінки експертів">
+              <div style="height: 330px;">
+                <lightning-datatable
+                    data-id="tableMarks"
+                    key-field="id"
+                    data={dataMarks}
+                    onsave={handleMarks}
+                    hide-checkbox-column
+                    columns={columnsMarks}>
+                </lightning-datatable>
+            </div>
+            </lightning-tab>
+            <lightning-tab label="Вагомість експертів">
+              <div style="height: 330px;">
+                <lightning-datatable
+                    data-id="tableAbsolute"
+                    key-field="id"
+                    data={dataAbsoluteFactors}
+                    onsave={handleAbsoluteFactors}
+                    hide-checkbox-column
+                    columns={columnsAbsoluteFactors}>
+                </lightning-datatable>
+            </div>
+            </lightning-tab>
+            <lightning-tab label="Комплексні експертні показники">
+              <div style="height: 330px;">
+                <lightning-datatable
+                    data-id="tableComplex"
+                    key-field="id"
+                    data={dataComplex}
+                    hide-checkbox-column
+                    columns={columnsComplex}>
+                </lightning-datatable>
+            </div>
+            </lightning-tab>
+            <lightning-tab label="Побудова діаграм">
+              <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-box slds-size_1-of-9">
+                  <div class="slds-grid slds-grid_vertical">
+                    <div class="slds-col slds-p-bottom_medium">
+                      <lightning-button label="Draw Industry" onclick={handleDraw}></lightning-button>
+                    </div>
+                    <div class="slds-col slds-p-bottom_medium">
+                      <lightning-button label="Draw Usability" onclick={handleDraw}></lightning-button>
+                    </div>
+                    <div class="slds-col slds-p-bottom_medium">
+                      <lightning-button label="Draw Programing" onclick={handleDraw}></lightning-button>
+                    </div>
+                    <div class="slds-col slds-p-bottom_medium">
+                      <lightning-button label="Draw Users" onclick={handleDraw}></lightning-button>
+                    </div>
+                    <div class="slds-col slds-p-bottom_medium">
+                      <lightning-button label="Draw General" onclick={handleDraw}></lightning-button>
+                    </div>
+                  </div>
+                </div>
+                <div class="slds-col slds-size_8-of-9 slds-align_absolute-center">
+                    <canvas height="120px" width="480"></canvas>
+                </div>
+              </div>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

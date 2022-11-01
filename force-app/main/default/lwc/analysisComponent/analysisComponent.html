@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <lightning-tabset variant="scoped">
+            <lightning-tab label="Ідентифікація">
+              <div>
+                <c-analysis-identification></c-analysis-identification>
+              </div>
+            </lightning-tab>
+            <lightning-tab label="Аналіз">
+              <div>
+                <c-analysis-risk></c-analysis-risk>
+              </div>
+            </lightning-tab>
+            <lightning-tab label="Планування">
+              <c-analysis-planning></c-analysis-planning>
+            </lightning-tab>
+            <lightning-tab label="Моніторинг">
+              <c-analysis-monitoring></c-analysis-monitoring>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>
